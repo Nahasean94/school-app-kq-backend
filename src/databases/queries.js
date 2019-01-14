@@ -66,7 +66,7 @@ const queries = {
                 console.log(person)
         return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
             }
-           return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
+           return await Role.find({isactive:true}).exec()
 
         })
     },
