@@ -11,7 +11,7 @@ const serve = require('koa-static');
 
 
 //connect to the database
-mongoose.connect('mongodb://68.183.29.191:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
+mongoose.connect('mongodb://localhost:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
 
 
 const app = new Koa()
