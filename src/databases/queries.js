@@ -61,9 +61,9 @@ const queries = {
     getRoles: async () => await Role.find().exec(),
 
     getSignupRoles: async () => {
-        return await Person.findOne({role:'admin',isactive:true}).exec().then(async person=>{
+        return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
             if(person){
-        return await Role.find({role:{$ne:'admin'},isactive:true}).exec()
+        return await Role.find({role:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
             }
            return await Role.find({isactive:true}).exec()
 
