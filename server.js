@@ -28,7 +28,7 @@ const index = new ApolloServer({
 index.applyMiddleware({app})
 router.get('/confirm/:token', async ctx => {
     const token = ctx.params.token
-    if (tolsken) {
+    if (token) {
         await authenticate.confirmEmail(token).then(person => {
             ctx.redirect('http://68.183.29.191:8080/')
         })
