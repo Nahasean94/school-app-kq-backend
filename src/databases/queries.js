@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 //Connect to Mongodb
 //TODO add username and password
-mongoose.connect('mongodb://68.183.29.191:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
+mongoose.connect('mongodb://localhost:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
 
 const queries = {
     /**
