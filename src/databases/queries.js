@@ -61,21 +61,14 @@ const queries = {
     getRoles: async () => await Role.find().exec(),
 
     getSignupRoles: async () => {
-        new Role( { _id : "5c39b79cb9717d6060a33c80", isactive : true, role : "teacher" })
-        new Role( { _id : "5c3a4b8f427a0e57a2b9df44", isactive : true, role : "student" })
-        new Role( { _id : "5c3a4be8d08d5d582332d66b", isactive : true, role : "admin" })
+               return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
+            if(person){
+                console.log(person)
+        return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
+            }
+           return await Role.find({isactive:true}).exec()
 
-
-
-        // return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
-        //     if(person){
-        //         console.log(person)
-        // return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
-        //     }
-        //
-        //    return await Role.find({isactive:true}).exec()
-        //
-        // })
+        })
     },
 
     /**
