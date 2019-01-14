@@ -30,7 +30,7 @@ router.get('/confirm/:token', async ctx => {
     const token = ctx.params.token
     if (token) {
         await authenticate.confirmEmail(token).then(person => {
-            ctx.redirect('http://68.183.29.191:8080/login')
+            ctx.redirect('http://68.183.29.191:8080')
         })
     } else {
         ctx.body = 'No token provided'
