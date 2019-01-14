@@ -176,7 +176,7 @@ const RootQuery = new GraphQLObjectType({
             resolve: async (parent, args, ctx) => {
 
                 return await queries.getSignupRoles(args).then(roles => {
-                    console.log(roles)
+
                     return roles
                 })
             }
