@@ -173,7 +173,13 @@ const RootQuery = new GraphQLObjectType({
         },
         getSignupRoles: {
             type: new GraphQLList(RoleType),
-            resolve: async (parent, args, ctx) => await queries.getSignupRoles(args).then(roles => roles)
+            resolve: async (parent, args, ctx) => {
+
+                return await queries.getSignupRoles(args).then(roles => {
+                    console.log(roles)
+                    return roles
+                })
+            }
         },
         getAllStudents: {
             type: new GraphQLList(PersonType),

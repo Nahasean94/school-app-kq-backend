@@ -25,7 +25,7 @@ const index = new ApolloServer({
         return new ApolloError('Oops! Something went wrong');
     },
 })
-
+index.applyMiddleware({app})
 router.get('/confirm/:token', async ctx => {
     const token = ctx.params.token
     if (tolsken) {
@@ -46,7 +46,7 @@ ctx.body=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 
 //apply middleware
 app.use(serve('./public'));
-index.applyMiddleware({app})
+
 app.use(cors())
 app.use(router.routes())
 app.use(router.allowedMethods())
