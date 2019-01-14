@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 
 module.exports={
     sendConfirmationEmail:async (token,recipient)=>{
-const link='http://localhost:8080/confirm/'+token
+const link='http://68.183.29.191:8080/confirm/'+token
     let transporter =nodemailer.createTransport({
         service: "Gmail",
         auth: {

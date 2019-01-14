@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 
-mongoose.connect('mongodb://localhost:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
+mongoose.connect('mongodb://68.183.29.191:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
 module.exports = {
     authenticate: async (ctx) => {
 

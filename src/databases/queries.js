@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 //Connect to Mongodb
 //TODO add username and password
-mongoose.connect('mongodb://localhost:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
+mongoose.connect('mongodb://68.183.29.191:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
 
 const queries = {
     /**
@@ -61,7 +61,7 @@ const queries = {
     getRoles: async () => await Role.find().exec(),
 
     getSignupRoles: async () => {
-        return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
+        return await Person.findOne({role:'admin',isactive:true}).exec().then(async person=>{
             if(person){
         return await Role.find({role:{$ne:'admin'},isactive:true}).exec()
             }
