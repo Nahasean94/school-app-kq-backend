@@ -5,14 +5,14 @@ module.exports={
     sendConfirmationEmail:async (token,recipient)=>{
 const link='http://68.183.29.191:8080/confirm/'+token
     let transporter =nodemailer.createTransport({
-        service: "Gmail",
+        service: "smtp.briskbusiness.co.ke",
         auth: {
-            user: 'ncubed940@gmail.com',
-            pass: 'stockmann2'
+            user: 'nahashon.njenga@briskbusiness.co.ke',
+            pass: 'joxUg;0Kaj4b.!s'
         }
     });
     let mailOptions = {
-        from: 'ncubed940@gmail.com',
+        from: 'nahashon.njenga@briskbusiness.co.ke',
         to: recipient,
         subject: "Confirm your credentials",
         html: `<style>
