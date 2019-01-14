@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 //Connect to Mongodb
 //TODO add username and password
-mongoose.connect('mongodb://localhost:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
+mongoose.connect('mongodb://68.183.29.191:27017/kaziquest_school', {useNewUrlParser: true, useCreateIndex: true})
 
 const queries = {
     /**
@@ -61,17 +61,21 @@ const queries = {
     getRoles: async () => await Role.find().exec(),
 
     getSignupRoles: async () => {
-        return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
-            if(person){
-                console.log(person)
-        return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
-            }
-            Role.find( ).exec().then(person=>{
-                console.log(person)
-            })
-           return await Role.find({isactive:true}).exec()
+        new Role( { _id : "5c39b79cb9717d6060a33c80", isactive : true, role : "teacher" })
+        new Role( { _id : "5c3a4b8f427a0e57a2b9df44", isactive : true, role : "student" })
+        new Role( { _id : "5c3a4be8d08d5d582332d66b", isactive : true, role : "admin" })
 
-        })
+
+
+        // return await Person.findOne({role:'5c3a4be8d08d5d582332d66b',isactive:true}).exec().then(async person=>{
+        //     if(person){
+        //         console.log(person)
+        // return await Role.find({_id:{$ne:'5c3a4be8d08d5d582332d66b'},isactive:true}).exec()
+        //     }
+        //
+        //    return await Role.find({isactive:true}).exec()
+        //
+        // })
     },
 
     /**
